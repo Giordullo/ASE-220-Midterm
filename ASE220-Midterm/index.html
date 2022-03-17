@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+    <head>
+	
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+		<link rel="stylesheet" href="stylesheet.css">
+
+		<!-- Javascript -->
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		
+		<script src="js/Account.js"></script>
+		<script src="js/indexCards.js"></script>
+		
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+		
+
+        <title>PodScholar</title>
+    </head>
+	
+	<!-- Header -->
+	<header>
+
+		<h2 class="header-title">PodScholar</h2>
+
+	</header>
+
+	<!-- Body -->
+    <body class="bg">
+
+		<!-- Navbar -->
+		<div class="d-grid gap-2 d-md-flex justify-content-md-end" id="header-nav-dropdown">
+
+			<!-- Nav Buttons -->
+			<button class="btn btn-secondary" type="button" onclick="location.href='index.html'; setGSearch('');">Home</button>
+			<button class="btn btn-dark" type="button" onclick="location.href='about.html'; setGSearch('');">About</button>
+
+			<!-- Username & Dashboard dropbox -->
+			<button class="btn btn-dark" type="button" id="LogInButton" onclick="location.href='login.html'; setSearch('');">Login</button>
+
+			<button class="btn btn-dark dropdown-toggle" type="button" id="UsernameButton" data-bs-toggle="dropdown" aria-expanded="false"></button>
+			<ul class="dropdown-menu dropdown-menu-dark">
+			  <li><a class="dropdown-item active" onclick="location.href='index.html'; setGSearch('');">Home</a></li>
+			  <li><a class="dropdown-item" onclick="location.href='upload.html'; setGSearch('');">Upload</a></li>
+			  <li><a class="dropdown-item" onclick="location.href='account.html'; setGSearch('');">Account</a></li>
+			  <li><a class="dropdown-item" onclick="LogInButtonPress(); setGSearch('');">Sign Out</a></li>
+			</ul>
+
+			<script>ShowLogInButton();</script>
+
+		</div>
+
+		  <!-- Search -->
+		  <div class="card bg-dark mb-3 text-white" id="newest-main-container">
+			 <!-- Search Bar -->
+			<div class="input-group">
+				<input type="text" class="form-control" id="textSearch">
+				<button class="btn btn-outline-secondary" type="button" onclick="setSearch($('#textSearch').val());">🔎</button>
+			</div>
+
+			<script>
+			// Save Search String
+			var input = document.getElementById("textSearch");
+			input.value = getSearch();
+			</script>
+
+			   <!-- Search Filters -->
+				<button class="btn btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#searchfilters" aria-expanded="false" aria-controls="collapseExample">
+				  Search Filters
+				</button>
+			  <div class="collapse" id="searchfilters">
+				<div class="card card-body bg-dark text-white">
+				 
+					<h5 class="card-title">Search By Date Published</h5>
+
+					<div class="list-group">
+						<a href="#" class="list-group-item list-group-item-action" onclick="setSortType('2022');">2022</a>
+						<a href="#" class="list-group-item list-group-item-action" onclick="setSortType('2021');">2021</a>
+						<a href="#" class="list-group-item list-group-item-action" onclick="setSortType('2020');">2020</a>
+						<a href="#" class="list-group-item list-group-item-action" onclick="setSortType('2019');">2019</a>
+						<div class="input-group">
+							<input type="text" class="form-control" id="customSearch">
+							<button class="btn btn-outline-secondary" type="button" onclick="setSortType($('#customSearch').val());">Custom</button>
+						</div>
+					</div>
+
+					<h5 class="card-title">Search By Date</h5>
+
+					<div class="list-group">
+						<a href="#" class="list-group-item list-group-item-action" onclick="setSortType('newest');">Newest</a>
+						<a href="#" class="list-group-item list-group-item-action" onclick="setSortType('oldest');">Oldest</a>
+					</div>
+
+				</div>
+			  </div>
+		  </div>
+
+		<!-- Newest Uploads -->
+		<div class="card bg-dark mb-3 text-white" id="newest-main-container">
+				<div class="card-header">Recent Uploads</div>
+
+			<!-- Uploads -->
+			<div class="card-body" id="PodCast-card"></div>
+			<div class="row">
+				<div class="col form-group">
+					<button class="btn btn-lg btn-primary btn-block" type="button" id="indexPageMoveBack" onclick="GotoPage(0);"> < Back</button>
+				</div>
+				<div class="col form-group">
+					<button class="btn btn-lg btn-primary btn-block" type="button" id="indexPageMoveForward" onclick="GotoPage(1);">Forward > </button>
+				</div>
+			</div>
+		</div>
+
+</body>
+</html>

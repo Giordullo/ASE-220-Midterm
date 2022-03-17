@@ -1,0 +1,145 @@
+body, html 
+{
+    height: 100%;
+    margin: 0;
+}
+  
+.bg 
+{
+    background-image: url("resources/imgs/background.jpg");
+    height: 100%; 
+    background-position: center;
+    background-repeat: repeat;
+    background-size: stretch;
+}
+
+@font-face {
+    font-family: 'Bungee';
+    src: url('resources/fonts/Bungee-Regular.ttf'); 
+}
+
+.header-title
+{
+    margin-top: 5%;
+    text-align: center;
+    font-family: 'Bungee';
+    font-size: 250%;
+}
+
+#header-nav-dropdown
+{
+  margin-right: 2%; 
+}
+
+#newest-main-container
+{
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%; 
+}
+
+#inputEmail
+{
+    margin-top: 3%;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%; 
+}
+
+#inputPassword
+{
+    margin-top: 3%;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%; 
+    margin-bottom: 3%;
+}
+
+#SignInButton
+{
+    margin-bottom: 1%;
+    margin-left: 25%;
+    margin-right: 25%; 
+    top: 50%;
+    width: 50%;
+    text-align: center;
+    font-size: 18px;
+}
+
+#SignInButton
+{
+    margin-bottom: 1%;
+    margin-left: 25%;
+    margin-right: 25%; 
+    top: 50%;
+    width: 50%;
+    text-align: center;
+    font-size: 18px;
+}
+
+#RegisterButton
+{
+    margin-top: 3%;
+    margin-left: 25%;
+    margin-right: 25%; 
+    top: 50%;
+    width: 50%;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 3%;
+}
+
+#registerFinput
+{
+    margin-top: 3%;
+    width: 60%;
+    margin-left: 31%;
+    margin-bottom: 3%; 
+}
+
+#registerLinput
+{
+    margin-top: 3%;
+    width: 69%;
+    margin-right: 30%; 
+    margin-bottom: 3%; 
+}
+
+#registerinput, #registerEinput, #registerTinput, #registerOinput, #registerPinput, #registerDinput, #registerKinput, #registerIinput, #registerCinput, #registerAinput
+{
+    margin-top: 3%;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%; 
+    margin-bottom: 3%; 
+}
+
+#terms
+{
+    margin-left: 5%;
+}
+
+#savebutton
+{
+    margin-top: 3%;
+    width: 20%;
+    margin-left: 40%;
+    margin-right: 40%; 
+    margin-bottom: 3%;
+}
+
+#indexPageMoveBack
+{
+    margin-top: 3%;
+    width: 60%;
+    margin-left: 31%;
+    margin-bottom: 3%; 
+}
+
+#indexPageMoveForward
+{
+    margin-top: 3%;
+    width: 69%;
+    margin-right: 30%; 
+    margin-bottom: 3%; 
+}
